@@ -29,8 +29,8 @@ if (app.get("env") === "development") {
     app.use(morgan("dev"));
 }
 
-app.get("/", (req: express.Request, res: express.Response) => {
-    res.send("Hello");
+app.get("*", (req: express.Request, res: express.Response) => {
+    res.send("Hello!");
 });
 
 // catch 404 and forward to error handler

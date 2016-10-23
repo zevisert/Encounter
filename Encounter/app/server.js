@@ -20,8 +20,8 @@ app.use("/api", Post_API_1.apiRouter);
 if (app.get("env") === "development") {
     app.use(morgan("dev"));
 }
-app.get("/", function (req, res) {
-    res.send("Hello");
+app.get("*", function (req, res) {
+    res.send("Hello!");
 });
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -5,18 +5,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const core_1 = require("@angular/core");
-let PostComponent = class PostComponent {
-    constructor() {
+var core_1 = require("@angular/core");
+var PostComponent = (function () {
+    function PostComponent() {
         this.title = "Zev Isert Website";
     }
-};
-PostComponent = __decorate([
-    core_1.Component({
-        selector: "my-app",
-        template: `	`,
-        styleUrls: ["styles/post.component.css"]
-    })
-], PostComponent);
+    PostComponent = __decorate([
+        core_1.Component({
+            selector: "my-app",
+            template: "\t",
+            styleUrls: ["styles/post.component.css"]
+        })
+    ], PostComponent);
+    return PostComponent;
+}());
 exports.PostComponent = PostComponent;
 //# sourceMappingURL=post.component.js.map

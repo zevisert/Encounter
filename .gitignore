@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Encounter/.vs
+/Encounter/bin
+/Encounter/node_modules
+/Encounter/obj/Debug
+/Encounter/typings

@@ -17,7 +17,7 @@ apiRouter.post("/auth",
     });
 
 apiRouter.use((req, res, next) => {
-    var token = (req.query && req.query.token) || (req.body && req.body.token) || (req.headers['x-access-token']);
+    var token = (req.query && req.query.token) || (req.body && req.body.token) || (req.headers["x-access-token"]);
 
     if (token) {
         // decode token
@@ -30,7 +30,7 @@ apiRouter.use((req, res, next) => {
         return res.status(403)
             .send({
                 success: false,
-                message: 'No token provided. What are you even trying to do?'
+                message: "No token provided. What are you even trying to do?"
             });
     }
 });

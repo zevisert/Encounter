@@ -36,7 +36,7 @@
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
-    <TypeScriptOutDir>E:\dev\encounter\Encounter\bin</TypeScriptOutDir>
+    <TypeScriptOutDir>E:\dev\encounter\Encounter\app</TypeScriptOutDir>
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptMapRoot />
@@ -47,24 +47,34 @@
     <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="public\site\about.component.ts" />
-    <TypeScriptCompile Include="public\site\app.component.ts" />
-    <TypeScriptCompile Include="public\site\app.module.ts" />
-    <TypeScriptCompile Include="public\site\app.routing.ts" />
-    <TypeScriptCompile Include="public\site\blog.component.ts" />
-    <TypeScriptCompile Include="public\site\dashboard.component.ts" />
-    <TypeScriptCompile Include="public\site\main.ts" />
-    <TypeScriptCompile Include="public\site\post.component.ts" />
-    <TypeScriptCompile Include="public\site\rxjs-extensions.ts" />
+    <Content Include="public\styles\about.component.css" />
+    <Content Include="public\styles\app.component.css" />
+    <TypeScriptCompile Include="site\about.component.ts" />
+    <TypeScriptCompile Include="site\app.component.ts" />
+    <TypeScriptCompile Include="site\app.module.ts" />
+    <TypeScriptCompile Include="site\app.routing.ts" />
+    <TypeScriptCompile Include="site\blog.component.ts" />
+    <TypeScriptCompile Include="site\dashboard.component.ts" />
+    <TypeScriptCompile Include="site\main.ts" />
+    <TypeScriptCompile Include="site\post.component.ts" />
+    <TypeScriptCompile Include="site\rxjs-extensions.ts" />
     <TypeScriptCompile Include="routes\Post-API.ts" />
     <TypeScriptCompile Include="server.ts" />
     <Content Include="package.json" />
+    <Content Include="public\index.html" />
+    <Content Include="public\styles\blog.component.css" />
+    <Content Include="public\styles\dashboard.component.css" />
+    <Content Include="public\styles\post.component.css" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="public\site\" />
+    <Folder Include="public\styles\" />
+    <Folder Include="site\" />
     <Folder Include="routes\" />
     <Folder Include="public\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="public\systemjs.config.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

@@ -1,10 +1,10 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { BlogComponent } from './blog.component';
-import { DashboardComponent } from './dashboard.component';
-import { AboutComponent } from './about.component';
-import { PostComponent } from './post.component';
+import { BlogComponent } from "./blog.component";
+import { DashboardComponent } from "./dashboard.component";
+import { AboutComponent } from "./about.component";
+import { PostComponent } from "./post.component";
 
 const appRoutes: Routes = [
 	{

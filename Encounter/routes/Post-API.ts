@@ -1,6 +1,6 @@
 ﻿import * as express from "express";
 
-export var apiRouter = express.Router();
+var apiRouter = express.Router();
 
 apiRouter.get("/",
     (req, res) => {
@@ -62,3 +62,5 @@ apiRouter.route("/post/:id")
     .post((req, res) => {
 
     });
+
+export { apiRouter };

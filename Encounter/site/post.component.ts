@@ -2,7 +2,7 @@
 
 @Component({
     selector: "my-app",
-    template: `	`,
+    templateUrl: "pages/post.component.html",
     styleUrls: ["styles/post.component.css"]
 })
 

@@ -11,13 +11,13 @@ import { apiRouter } from "./routes/Post-API";
 const app: express.Application = express();
 app.disable("x-powered-by");
 
-//app.use(favicon(join(__dirname, "../public", "favicon.ico")));
+app.use(favicon(join(__dirname, "../public", "favicons/favicon.ico")));
 app.use("/node_modules", express.static(join(__dirname, "../node_modules")));
 app.use("/app", express.static(join(__dirname, "../app")));
 app.use(express.static(join(__dirname, "../public")));
 
-//app.use(json());
-//app.use(urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 // api routes
 app.use("/api", apiRouter);
@@ -29,8 +29,8 @@ if (app.get("env") === "development") {
     app.use(morgan("dev"));
 }
 
-app.get("*", (req: express.Request, res: express.Response) => {
-    res.send("Hello!");
+app.get("/", (req: express.Request, res: express.Response) => {
+    return res.redirect("/");
 });
 
 // catch 404 and forward to error handler

@@ -47,6 +47,11 @@
     <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="public\pages\about.component.html" />
+    <Content Include="public\pages\app.component.html" />
+    <Content Include="public\pages\blog.component.html" />
+    <Content Include="public\pages\dashboard.component.html" />
+    <Content Include="public\pages\post.component.html" />
     <Content Include="public\styles\about.component.css" />
     <Content Include="public\styles\app.component.css" />
     <TypeScriptCompile Include="site\about.component.ts" />
@@ -68,6 +73,8 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="public\favicons\" />
+    <Folder Include="public\pages\" />
     <Folder Include="public\styles\" />
     <Folder Include="site\" />
     <Folder Include="routes\" />

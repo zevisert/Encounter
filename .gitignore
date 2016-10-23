@@ -3,6 +3,7 @@
 ################################################################################
 
 /Encounter/.vs
+/Encounter/app
 /Encounter/bin
 /Encounter/node_modules
 /Encounter/obj/Debug

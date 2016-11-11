@@ -6,7 +6,8 @@ import * as morgan from "morgan";
 import * as favicon from "serve-favicon";
 import { json, urlencoded } from "body-parser";
 
-import { apiRouter } from "./routes/Post-API";
+import { apiRouter } from "./routes/api.routes";
+import { webRoutes } from "./routes/web.routes"
 
 const app: express.Application = express();
 app.disable("x-powered-by");
@@ -22,19 +23,16 @@ app.use(urlencoded({ extended: true }));
 // api routes
 app.use("/api", apiRouter);
 
-// error handlers
+// Web routes
+app.use("/", webRoutes);
+
 // development error handler
-// will print stacktrace
 if (app.get("env") === "development") {
     app.use(morgan("dev"));
 }
 
-app.get("/", (req: express.Request, res: express.Response) => {
-    return res.redirect("/");
-});
-
 // catch 404 and forward to error handler
-app.use((req: express.Request, res: express.Response, next) => {
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     let err = new Error("Not Found");
     next(err);
 });

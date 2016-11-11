@@ -12,6 +12,7 @@ import { webRoutes } from "./routes/web.routes"
 const app: express.Application = express();
 app.disable("x-powered-by");
 
+// Prefixed parent directory to step out of build folder 'app'
 app.use(favicon(join(__dirname, "../public", "favicons/favicon.ico")));
 app.use("/node_modules", express.static(join(__dirname, "../node_modules")));
 app.use("/app", express.static(join(__dirname, "../app")));

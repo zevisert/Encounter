@@ -3,7 +3,7 @@
 @Component({
     selector: "my-app",
     templateUrl: "pages/about.component.html",
-    styleUrls: ["styles/about.component.css"]
+    styleUrls: ["styles/about.component.css", "styles/card.css"]
 })
 
 export class AboutComponent {

@@ -10,33 +10,38 @@ import { BlogComponent } from "./blog.component";
 import { PostComponent } from "./post.component";
 import { DashboardComponent } from "./dashboard.component";
 
+// Service declarations
+import { BlogService } from "./blog.service";
+import { AUTH_PROVIDERS } from "angular2-jwt";
+
 // Other declarations
 import { routing } from "./app.routing";
 
 import "./rxjs-extensions";
 
 @NgModule({
-  imports: [
-  	BrowserModule,
-  	FormsModule,
-  	HttpModule,
-    routing
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        routing
+    ],
 
-  declarations: [
-      AppComponent,
-      AboutComponent,
-      BlogComponent, 
-      PostComponent,
-      PostComponent,
-      DashboardComponent
-  ],
+    declarations: [
+        AppComponent,
+        AboutComponent,
+        BlogComponent,
+        PostComponent,
+        DashboardComponent
+    ],
 
-  providers: [
-  ],
+    providers: [
+        BlogService,
+        AUTH_PROVIDERS
+    ],
 
-  bootstrap: [
-  	AppComponent
-  ]
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

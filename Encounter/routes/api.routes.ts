@@ -3,8 +3,8 @@ import * as jwt from "jsonwebtoken";
 import { join } from "path";
 import * as fs from "fs";
 
-var apiRouter: express.Router = express.Router();
-var superSecret = process.env.SECRET;
+const apiRouter: express.Router = express.Router();
+const superSecret: string = process.env.SECRET;
 
 apiRouter.get("/",
     (req: express.Request, res: express.Response) => {

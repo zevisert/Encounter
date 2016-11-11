@@ -1,5 +1,8 @@
 ﻿/// <reference path="typings/index.d.ts"/>
 
+// Load environment variables
+require("env2")("process.env");
+
 import * as express from "express";
 import { join } from "path";
 import * as morgan from "morgan";
@@ -9,10 +12,6 @@ import { json, urlencoded } from "body-parser";
 import { apiRouter } from "./routes/api.routes";
 import { webRoutes } from "./routes/web.routes"
 
-// Load environment variables
-require("env2")("process.env");
-console.log(process.env.APP_PORT);
-console.log(process.env.SECRET);
 
 const app: express.Application = express();
 app.disable("x-powered-by");

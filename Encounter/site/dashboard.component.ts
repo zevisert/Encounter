@@ -3,7 +3,7 @@
 @Component({
     selector: "my-app",
     templateUrl: "pages/dashboard.component.html",
-    styleUrls: ["styles/dashboard.component.css"]
+    styleUrls: ["styles/dashboard.component.css", "styles/card.css"]
 })
 
 export class DashboardComponent {

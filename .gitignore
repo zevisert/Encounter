@@ -9,3 +9,5 @@
 /Encounter/obj/Debug
 /Encounter/typings
 /Encounter/public/images
+/Encounter/private
+/Encounter/process.env

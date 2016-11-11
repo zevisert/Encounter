@@ -9,6 +9,11 @@ import { json, urlencoded } from "body-parser";
 import { apiRouter } from "./routes/api.routes";
 import { webRoutes } from "./routes/web.routes"
 
+// Load environment variables
+require("env2")("process.env");
+console.log(process.env.APP_PORT);
+console.log(process.env.SECRET);
+
 const app: express.Application = express();
 app.disable("x-powered-by");
 
@@ -48,6 +53,6 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
     });
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`App listening on ${process.env.PORT}`);
+app.listen(process.env.APP_PORT || process.env.PORT, () => {
+    console.log(`App listening on ${process.env.APP_PORT || process.env.PORT}`);
 })

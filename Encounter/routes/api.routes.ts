@@ -1,6 +1,10 @@
 ﻿import * as express from "express";
+import * as jwt from "jsonwebtoken";
+import { join } from "path";
+import * as fs from "fs";
 
 var apiRouter: express.Router = express.Router();
+var superSecret = process.env.SECRET;
 
 apiRouter.get("/",
     (req: express.Request, res: express.Response) => {
@@ -9,10 +13,23 @@ apiRouter.get("/",
 
 apiRouter.post("/auth",
     (req: express.Request, res: express.Response) => {
+        let token: string = jwt.sign(
+            {
+                time: new Date()
+            },
+            superSecret,
+            {
+                expiresIn: "2h"
+            }
+        );
+
+        let created = new Date();
+        let expires = created.setHours(created.getHours() + 2);
         res.json({
-            success: false,
-            message: "Not implemented",
-            token: null
+            success: token != null,
+            message: token != null ? "Token created at: " + created: "Unable to create token",
+            expires: token != null ? expires : null,
+            token: token
         });
     });
 
@@ -21,7 +38,14 @@ apiRouter.use((req: express.Request, res: express.Response, next: express.NextFu
 
     if (token) {
         // decode token
-
+        jwt.verify(token, superSecret, (err: any, decoded: express.Request) => {
+            if (err) {
+                return res.json({ success: false, message: "Get outta here with your untrusted token!" });
+            }
+            else {
+                next(); // make sure we go to the next routes and don't stop here
+            }
+        });
         // if token ok
         next(); // make sure we go to the next routes and don't stop here
     } else {
@@ -38,7 +62,8 @@ apiRouter.use((req: express.Request, res: express.Response, next: express.NextFu
 apiRouter.route("/posts")
     // Get all posts
     .get((req: express.Request, res: express.Response) => {
-
+        var posts = require(join(__dirname, "../../private/posts.json"));
+        res.json(posts);
     })
 
     // Create a new post

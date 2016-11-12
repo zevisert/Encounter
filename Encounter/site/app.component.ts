@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, ViewEncapsulation, OnInit, Inject } from "@angular/core";
 
 @Component({
     selector: "my-app",
@@ -7,6 +7,11 @@ import { Component, ViewEncapsulation } from "@angular/core";
 	styleUrls: ["styles/app.component.css"]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
+    constructor(@Inject("particlesJS") private particles: any) { }
+
+    ngOnInit(): void {
+        this.particles.load("particles-background", "assets/particles.json");
+    }
 }

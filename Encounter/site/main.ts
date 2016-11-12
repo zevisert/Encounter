@@ -1,4 +1,7 @@
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { AppModule } from "./app.module";
-const platform = platformBrowserDynamic();
-platform.bootstrapModule(AppModule);
+
+export function main(params: any) {
+    const platform = platformBrowserDynamic([{ provide: "particlesJS", useValue: params.injections.particles}]);
+    platform.bootstrapModule(AppModule);
+}

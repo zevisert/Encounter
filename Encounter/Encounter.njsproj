@@ -49,6 +49,7 @@
     <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="public\assets\particles.json" />
     <Content Include="private\posts.json" />
     <Content Include="process.env" />
     <Content Include="public\images\assets\icon-arrow.png" />
@@ -752,6 +753,7 @@
     <Folder Include="public\images\photos\1459552650862\" />
     <Folder Include="public\images\photos\1462514754776\" />
     <Folder Include="private\" />
+    <Folder Include="public\assets\" />
     <Folder Include="public\pages\" />
     <Folder Include="public\styles\" />
     <Folder Include="site\" />

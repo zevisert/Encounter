@@ -51,9 +51,11 @@
     padding: 0;
 }
 
-.card .action {
+.card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .card .card-image {

@@ -5,6 +5,7 @@ import * as fs from "fs";
 
 const apiRouter: express.Router = express.Router();
 const superSecret: string = process.env.SECRET;
+let blogData: JSON | any = require(join(__dirname, "../../private/posts.json"));
 
 apiRouter.get("/",
     (req: express.Request, res: express.Response) => {
@@ -33,7 +34,7 @@ apiRouter.post("/auth",
         });
     });
 
-apiRouter.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+/* apiRouter.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     var token = (req.query && req.query.token) || (req.body && req.body.token) || (req.headers["x-access-token"]);
 
     if (token) {
@@ -57,13 +58,12 @@ apiRouter.use((req: express.Request, res: express.Response, next: express.NextFu
                 message: "No token provided. What are you even trying to do?"
             });
     }
-});
+}); */
 
 apiRouter.route("/posts")
     // Get all posts
     .get((req: express.Request, res: express.Response) => {
-        var posts = require(join(__dirname, "../../private/posts.json"));
-        res.json(posts);
+        res.json(blogData.posts);
     })
 
     // Create a new post
@@ -75,7 +75,7 @@ apiRouter.route("/posts")
 apiRouter.route("/post/:id")
     // Get a specific post
     .get((req: express.Request, res: express.Response) => {
-
+        res.json(blogData.posts[req.params.id]);
     })
 
     // Delete a post

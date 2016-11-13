@@ -1,1 +1,26 @@
-﻿<p>I am the post html</p>
+﻿<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="container">
+            <div class="card">
+                <div *ngIf="post">
+                    <div *ngIf="post.hasImage" class="card-image">
+                        <img src="{{ post.imageUrl }}" />
+                    </div>
+                    <div class="card-title">
+                        <span>{{ post.title }}</span>
+                        <br/>
+                        <small>Posted: {{ post.getPostedDate() }}</small>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            {{ post.body }}
+                        </p>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="btn btn-primary" role="button" (click)="back()">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

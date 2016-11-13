@@ -680,6 +680,7 @@
     <TypeScriptCompile Include="site\main.ts" />
     <TypeScriptCompile Include="site\post.component.ts" />
     <TypeScriptCompile Include="site\post.ts" />
+    <TypeScriptCompile Include="site\post.data.ts" />
     <TypeScriptCompile Include="site\rxjs-extensions.ts" />
     <TypeScriptCompile Include="routes\api.routes.ts" />
     <TypeScriptCompile Include="server.ts" />

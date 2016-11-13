@@ -1,11 +1,40 @@
 ﻿/* These styles are unencapsulated, they apply to all other components as well */
 body {
     padding-top: 65px;
-    background-color: #F0F0F0;
+    background-color: #E8ECED;
 }
 
+.navbar {
+    background-color: #334d5c !important;
+}
+
+.btn-primary {
+    color: #334d5c;
+    background-color: #E8ECED;
+}
+
+    .btn-primary:hover {
+        background-color: #A4B7BB;
+    }
+
+    .btn-primary:active:hover {
+        background-color: #76A0B0;
+    }
+
+    .btn-primary:active {
+        background-color: #A4B7BB;
+        background-image: -webkit-radial-gradient(circle, #76A0B0 10%, #A4B7BB 11%);
+        background-image: -o-radial-gradient(circle, #76A0B0 10%, #A4B7BB 11%);
+        background-image: radial-gradient(circle, #76A0B0 10%, #A4B7BB 11%);
+        background-repeat: no-repeat;
+        -webkit-background-size: 1000% 1000%;
+        background-size: 1000% 1000%;
+        -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
 #particles-background {
-    position: absolute;
+    position: fixed;
     display: block;
     top: 0;
     left: 0;

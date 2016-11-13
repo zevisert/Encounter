@@ -25,16 +25,16 @@ app.use(express.static(join(__dirname, "../public")));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
+// development error handler
+if (app.get("env") === "development") {
+    app.use(morgan("dev"));
+}
+
 // api routes
 app.use("/api", apiRouter);
 
 // Web routes
 app.use("/", webRoutes);
-
-// development error handler
-if (app.get("env") === "development") {
-    app.use(morgan("dev"));
-}
 
 // catch 404 and forward to error handler
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {

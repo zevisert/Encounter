@@ -2,8 +2,6 @@
 
 import { Headers, Http, Response } from "@angular/http";
 
-//import { AuthHttp } from "angular2-jwt";
-
 import "rxjs/add/operator/toPromise"
 
 import { PostData } from "./post.data";

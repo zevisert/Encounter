@@ -11,7 +11,8 @@ import { PostData } from "./post.data";
 @Injectable()
 export class BlogService {
 
-    private postsUrl = 'api/posts';
+    private allPostsUrl = "api/posts";
+    private singlePostUrl = "api/post/"
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
     private cachedPosts: PostData[];
@@ -29,7 +30,7 @@ export class BlogService {
             // A request must be in progress, return the obs
             return this.cachedPromise;
         } else {
-            this.cachedPromise = this.http.get(this.postsUrl)
+            this.cachedPromise = this.http.get(this.allPostsUrl)
                 .toPromise()
                 .then((res: Response) => {
                     this.cachedPosts = res.json() as PostData[];
@@ -43,8 +44,18 @@ export class BlogService {
     }
 
     getPost(id: number): Promise<PostData> {
-        return this.getPosts()
-            .then(posts => posts.find(post => post.date === id));
+        if (this.cachedPosts) {
+            // We've got all the posts, so just return the correct one
+            return Promise.resolve(this.cachedPosts.find(post => (post.date === id)));
+        } else {
+            // Make the request for the single post
+            return this.http.get(this.singlePostUrl + id)
+                .toPromise()
+                .then((res: Response) => {
+                    return res.json() as PostData;
+                })
+                .catch(this.handleError);
+        }
     }
 
     private handleError(error: any): Promise<any> {

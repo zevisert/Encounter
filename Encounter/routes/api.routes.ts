@@ -75,7 +75,8 @@ apiRouter.route("/posts")
 apiRouter.route("/post/:id")
     // Get a specific post
     .get((req: express.Request, res: express.Response) => {
-        res.json(blogData.posts[req.params.id]);
+        let post = blogData.posts.find(post => post.date === Number(req.params.id));
+        res.json(post);
     })
 
     // Delete a post

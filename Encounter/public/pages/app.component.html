@@ -26,4 +26,24 @@
 </nav>
 
 <div id="particles-background"></div>
+
+<modal #authModal [backdrop]="'static'">
+    <modal-header [show-close]="true">
+        <h4 class="modal-title">Passcode please!</h4>
+    </modal-header>
+    <modal-body>
+        <div id="authPattern" style="margin: 0 auto;"></div>
+    </modal-body>
+    <modal-footer>
+        <div style="text-align: center">I like to know who's looking at this content. Get the passcode above right, and you can have anonymous access, otherwise please tell me who you are!</div>
+        <div class="input-group" [class.has-error]="inputEmpty">
+            <input type="text" class="form-control input-sm" required [(ngModel)]="firstName" name="firstName" id="firstName" placeholder="Your name" style="text-align: right" (keyup.enter)="namedAccessButton()">
+            <span class="input-group-btn">
+                <button class="btn btn-link btn-sm" type="button" (click)="namedAccessButton()">Go</button>
+            </span>
+        </div>
+    </modal-footer>
+</modal>
+
+
 <router-outlet></router-outlet>

@@ -5,7 +5,7 @@ import { Post } from "./post"
 import { BlogService } from "./blog.service"
 
 @Component({
-    selector: "my-app",
+    selector: "zev-app",
     templateUrl: "pages/blog.component.html",
     styleUrls: ["styles/blog.component.css", "styles/card.css"]
 })

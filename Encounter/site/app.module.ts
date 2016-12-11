@@ -12,10 +12,13 @@ import { DashboardComponent } from "./dashboard.component";
 
 // Service declarations
 import { BlogService } from "./blog.service";
+import { AuthService } from "./auth.service";
+import { AuthGuard } from "./auth.guard";
 import { AUTH_PROVIDERS } from "angular2-jwt";
 
 // Other declarations
 import { routing } from "./app.routing";
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 import "./rxjs-extensions";
 
@@ -24,6 +27,7 @@ import "./rxjs-extensions";
         BrowserModule,
         FormsModule,
         HttpModule,
+        Ng2Bs3ModalModule,
         routing
     ],
 
@@ -37,6 +41,8 @@ import "./rxjs-extensions";
 
     providers: [
         BlogService,
+        AuthService,
+        AuthGuard,
         AUTH_PROVIDERS
     ],
 

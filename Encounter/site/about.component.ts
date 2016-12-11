@@ -1,7 +1,7 @@
 ﻿import { Component } from "@angular/core";
 
 @Component({
-    selector: "my-app",
+    selector: "zev-app",
     templateUrl: "pages/about.component.html",
     styleUrls: ["styles/about.component.css", "styles/card.css"]
 })

@@ -12,7 +12,17 @@
           rel="stylesheet"
           integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+"
           crossorigin="anonymous"
-    >
+    />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+    
+    <!-- PatternLock.js -->
+    <link href="/assets/patternLock.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/patternLock.js"></script>
     
     <!-- Particles.js -->
     <script src="/node_modules/particles.js/particles.js"></script>
@@ -28,12 +38,42 @@
     <script>
         System
             .import('app')
-            .then(module => module.main({ injections: { particles: particlesJS } }))
+            .then(module => {
+                setTimeout(() => {
+                    module.main({
+                        injections: {
+                            particles: particlesJS,
+                            patternlock: PatternLock
+                        }
+                    }
+                )}, 1000);
+            })
             .catch(err => console.error(err));
+
     </script>
 </head>
 <!-- 3. Display the application -->
 <body>
-    <my-app>Loading...</my-app>
+    <zevisert>
+        <div class="row">
+            <div class="container" style="padding-top: 400px">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var i = 0;
+            var p = setInterval(() => {
+                if ((i += 20) <= 100) {
+                    $('.progress-bar').css('width', `${i}%`);
+                } else {
+                    clearInterval(p);
+                }
+            },200);
+        </script>
+    </zevisert>
+    <modal-component></modal-component>
 </body>
 </html>

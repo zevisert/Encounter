@@ -52,6 +52,7 @@
     <Content Include="public\assets\particles.json" />
     <Content Include="private\posts.json" />
     <Content Include="process.env" />
+    <Content Include="public\assets\patternLock.css" />
     <Content Include="public\images\assets\icon-arrow.png" />
     <Content Include="public\images\flat-icons\Freebie\AI\icons.ai" />
     <Content Include="public\images\flat-icons\Freebie\EPS\icons.eps" />
@@ -674,6 +675,8 @@
     <TypeScriptCompile Include="site\app.component.ts" />
     <TypeScriptCompile Include="site\app.module.ts" />
     <TypeScriptCompile Include="site\app.routing.ts" />
+    <TypeScriptCompile Include="site\auth.guard.ts" />
+    <TypeScriptCompile Include="site\auth.service.ts" />
     <TypeScriptCompile Include="site\blog.component.ts" />
     <TypeScriptCompile Include="site\blog.service.ts" />
     <TypeScriptCompile Include="site\dashboard.component.ts" />
@@ -762,6 +765,8 @@
     <Folder Include="public\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="public\assets\patternLock.js" />
+    <Compile Include="public\assets\patternLock.min.js" />
     <Compile Include="public\systemjs.config.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

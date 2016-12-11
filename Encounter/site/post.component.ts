@@ -5,7 +5,7 @@ import { Post } from "./post";
 import { BlogService } from "./blog.service";
 
 @Component({
-    selector: "my-app",
+    selector: "zev-app",
     templateUrl: "pages/post.component.html",
     styleUrls: ["styles/post.component.css", "styles/card.css"]
 })
@@ -25,7 +25,7 @@ export class PostComponent implements OnInit {
         });
     }
 
-   back(): void {
+    back(): void {
         // Wait for the button animation to complete before moving back
         setTimeout(() => window.history.back(), 300);
     }

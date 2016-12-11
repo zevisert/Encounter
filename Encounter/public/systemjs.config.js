@@ -4,6 +4,7 @@
  */
 (function (global) {
     System.config({
+        defaultJSExtensions: true,
         paths: {
             // paths serve as alias
             'npm:': "node_modules/"
@@ -24,7 +25,8 @@
             // other libraries
             'rxjs': "npm:rxjs",
             'angular2-jwt': "npm:angular2-jwt/angular2-jwt.js",
-            'jsonwebtoken': "npm:jsonwebtoken/index.js"
+            'ng2-bs3-modal': 'npm:ng2-bs3-modal'
+
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -32,7 +34,10 @@
                 main: "./main.js",
                 defaultExtension: "js"
             },
-            rxjs: {
+            "rxjs" : {
+                defaultExtension: "js"
+            },
+            "ng2-bs3-modal" : {
                 defaultExtension: "js"
             }
         }

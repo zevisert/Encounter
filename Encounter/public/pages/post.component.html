@@ -11,10 +11,7 @@
                         <br/>
                         <small>Posted: {{ post.getPostedDate() }}</small>
                     </div>
-                    <div class="card-content">
-                        <p>
-                            {{ post.body }}
-                        </p>
+                    <div class="card-content" [innerHTML]="post.body">
                     </div>
                 </div>
                 <div class="card-action">

@@ -29,10 +29,7 @@
                 <div class="card-title">
                     <span>{{post.title}}</span>
                 </div>
-                <div class="card-content">
-                    <p>
-                        {{post.truncate(150)}}
-                    </p>
+                <div class="card-content" [innerHTML]="post.truncate(150)">
                 </div>
                 <div class="card-action">
                     <a class="btn btn-primary" role="button" (click)="gotoPost(post)">Read more...</a>

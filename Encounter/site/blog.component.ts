@@ -34,7 +34,7 @@ export class BlogComponent implements OnInit {
     }
 
     gotoPost(post: Post): void {
-        // Wait for the animation to finish before moving to the next page
+        // Wait for the button's animation to finish before moving to the next page
         setTimeout(() => this.router.navigate(["/post", post.getId()]), 300);
     }
 }

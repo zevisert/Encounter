@@ -1,6 +1,7 @@
 ﻿import { Injectable, Inject } from "@angular/core";
 
-import { Headers, Http, Response } from "@angular/http";
+import { Headers, Response } from "@angular/http";
+import { AuthHttp } from "angular2-jwt";
 
 import "rxjs/add/operator/toPromise"
 
@@ -16,7 +17,8 @@ export class BlogService {
     private cachedPosts: PostData[];
     private cachedPromise: Promise<PostData[]>;
 
-    constructor(@Inject(Http) private http: Http) { }
+    // Angular2-jwt nicely attaches the token to every request for us
+    constructor(@Inject(AuthHttp) private http: AuthHttp) { }
 
     getPosts(): Promise<PostData[]> {
         if (this.cachedPosts) {

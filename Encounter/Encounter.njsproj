@@ -673,6 +673,7 @@
     <TypeScriptCompile Include="routes\web.routes.ts" />
     <TypeScriptCompile Include="site\about.component.ts" />
     <TypeScriptCompile Include="site\app.component.ts" />
+    <TypeScriptCompile Include="site\app.mobile-browser.ts" />
     <TypeScriptCompile Include="site\app.module.ts" />
     <TypeScriptCompile Include="site\app.routing.ts" />
     <TypeScriptCompile Include="site\auth.guard.ts" />

@@ -14,7 +14,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { BlogService } from "./blog.service";
 import { AuthService } from "./auth.service";
 import { AuthGuard } from "./auth.guard";
-import { AUTH_PROVIDERS } from "angular2-jwt";
+import { provideAuth } from "angular2-jwt";
 
 // Other declarations
 import { routing } from "./app.routing";
@@ -43,7 +43,12 @@ import "./rxjs-extensions";
         BlogService,
         AuthService,
         AuthGuard,
-        AUTH_PROVIDERS
+        provideAuth({
+            headerName: "x-access-token",
+            tokenName: "blog_auth",
+            noTokenScheme: true,
+            tokenGetter: () => localStorage.getItem("blog_auth")
+        })
     ],
 
     bootstrap: [

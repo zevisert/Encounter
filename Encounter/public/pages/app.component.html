@@ -36,7 +36,7 @@
     </modal-body>
     <modal-footer>
         <div style="text-align: center">I like to know who's looking at this content. Get the passcode above right, and you can have anonymous access, otherwise please tell me who you are!</div>
-        <div class="input-group" [class.has-error]="inputEmpty">
+        <div class="input-group" [class.has-error]="inputError">
             <input type="text" class="form-control input-sm" required [(ngModel)]="firstName" name="firstName" id="firstName" placeholder="Your name" style="text-align: right" (keyup.enter)="namedAccessButton()">
             <span class="input-group-btn">
                 <button class="btn btn-link btn-sm" type="button" (click)="namedAccessButton()">Go</button>

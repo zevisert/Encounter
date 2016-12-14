@@ -3,4 +3,5 @@
     date: number;
     imageFileName: string;
     title: string;
+    hasScripts: boolean;
 }

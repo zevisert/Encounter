@@ -5,7 +5,8 @@ export function main(params: any) {
     const platform = platformBrowserDynamic(
         [
             { provide: "particlesJS", useValue: params.injections.particles },
-            { provide: "PatternLock", useValue: params.injections.patternlock }
+            { provide: "PatternLock", useValue: params.injections.patternlock },
+            { provide: "jQuery", useValue: params.injections.jQuery }
         ]);
     platform.bootstrapModule(AppModule);
 }

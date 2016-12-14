@@ -11,14 +11,23 @@ import { PostData } from "./post.data";
 export class BlogService {
 
     private allPostsUrl = "api/posts";
-    private singlePostUrl = "api/post/"
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-
+    private singlePostUrl = "api/post/";
+    private rendered: Set<number>;
     private cachedPosts: PostData[];
     private cachedPromise: Promise<PostData[]>;
 
     // Angular2-jwt nicely attaches the token to every request for us
-    constructor(@Inject(AuthHttp) private http: AuthHttp) { }
+    constructor(@Inject(AuthHttp) private http: AuthHttp) {
+        this.rendered = new Set<number>();
+    }
+
+    haveDisplayed(id: number): boolean {
+        return this.rendered.has(id);
+    }
+
+    displayed(id: number): void {
+        this.rendered.add(id);
+    }
 
     getPosts(): Promise<PostData[]> {
         if (this.cachedPosts) {

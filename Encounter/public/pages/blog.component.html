@@ -3,22 +3,19 @@
         <div class="container">
             <div class="card" (click)="onSelectPost(null)">
                 <div class="row">
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="hidden-xs hidden-sm col-xl-2 col-lg-2 col-md-2">
                         <img class="card-icon img-responsive img-rounded" src="/images/flat-icons/PNG/Treasure Map.png">
                     </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <div class="card-title">
-                            <span>Hey out there internet!</span>
+                            <span>Adventures!</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                            Last time around, I wasn't quite happy with how I had designed my blog. I'm much more
+                            satisfied with my changes now, and although you don't see much of a difference there was
+                            a big set of changes to this page while my site was inactive. Soon I'll have filters, 
+                            tags, and searching set up here. I've even been considering doing some posts on interesting
+                            code. Stay tuned! 
                         </div>
                     </div>
                 </div>
@@ -29,7 +26,7 @@
                 <div class="card-title">
                     <span>{{post.title}}</span>
                 </div>
-                <div class="card-content" [innerHTML]="post.truncate(150)">
+                <div class="card-content" [innerHTML]="post.truncate(150) | trust">
                 </div>
                 <div class="card-action">
                     <a class="btn btn-primary" role="button" (click)="gotoPost(post)">Read more...</a>

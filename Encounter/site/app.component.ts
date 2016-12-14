@@ -2,6 +2,7 @@ import {
     Component,
     ViewEncapsulation,
     OnInit,
+    OnDestroy,
     ViewChild,
     Inject
 } from "@angular/core";
@@ -11,6 +12,7 @@ import { ModalComponent } from "ng2-bs3-modal/ng2-bs3-modal";
 import { AuthService } from "./auth.service";
 
 import { Subject } from "rxjs/Subject";
+import { Subscription } from "rxjs"
 
 import { mobile } from "./app.mobile-browser";
 
@@ -21,28 +23,32 @@ import { mobile } from "./app.mobile-browser";
     styleUrls: ["styles/app.component.css"]
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
 
     @ViewChild("authModal")
     authModal: ModalComponent;
 
     private lock: any = null;
     private cachedRoute: string = null;
-    firstName: string = "";
+
+    private subscriptions: Subscription[];
+
+    public firstName: string = "";
     public inputError: boolean = false;
 
     constructor(
         @Inject("particlesJS") private particles: any,
         @Inject("PatternLock") private patternLock: any,
-        @Inject(AuthService) private authService: AuthService)
-    {
-        this.authService.needAuth$.subscribe( (route: string)=> {
-            this.openModal(route);
-        });
+        @Inject(AuthService) private authService: AuthService) {
 
-        this.authService.doneAuth$.subscribe(() => this.closeModal());
-
-        this.authService.errorAuth$.subscribe((errorType: "pattern"|"name") => this.errorModal(errorType));
+        this.subscriptions = new Array<Subscription>();
+        this.subscriptions.push(
+            this.authService.needAuth$.subscribe((route: string) => {
+                this.openModal(route);
+            }),
+            this.authService.doneAuth$.subscribe(() => this.closeModal()),
+            this.authService.errorAuth$.subscribe((errorType: "pattern" | "name") => this.errorModal(errorType))
+        );
     }
 
     openModal(route: string): void {
@@ -104,6 +110,14 @@ export class AppComponent implements OnInit{
             // Only load particles on non-mobile browsers
             this.particles.load("particles-background", "assets/particles.json");
         }
+    }
+
+    ngOnDestroy(): void {
+        for (let sub of this.subscriptions)
+        {
+            sub.unsubscribe();
+        }
+        this.subscriptions = null;
     }
 
     isMobile(): boolean {

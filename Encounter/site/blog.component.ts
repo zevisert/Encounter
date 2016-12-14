@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, Inject} from "@angular/core";
+﻿import { Component, OnInit, Inject, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { Post } from "./post"
@@ -14,9 +14,14 @@ export class BlogComponent implements OnInit {
     posts: Post[];
     selectedPost: Post;
 
-    constructor(@Inject(BlogService) private blogService: BlogService, @Inject(Router) private router: Router) {
+    constructor(
+        @Inject(BlogService) private blogService: BlogService,
+        @Inject(Router) private router: Router,
+        @Inject(NgZone) private ngZone: NgZone
+    ){
         this.selectedPost = null;
         this.posts = new Array<Post>();
+        (window as any).routerGoto = this.routerGoto.bind(this);
     }
 
     ngOnInit(): void {
@@ -36,5 +41,9 @@ export class BlogComponent implements OnInit {
     gotoPost(post: Post): void {
         // Wait for the button's animation to finish before moving to the next page
         setTimeout(() => this.router.navigate(["/post", post.getId()]), 300);
+    }
+
+    routerGoto(location: string): void {
+        this.ngZone.run(() => this.router.navigateByUrl(location));
     }
 }

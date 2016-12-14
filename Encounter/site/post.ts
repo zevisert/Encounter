@@ -1,17 +1,21 @@
-﻿import { PostData } from "./post.data";
+﻿import { Inject } from "@angular/core";
+
+import { PostData } from "./post.data";
 
 export class Post {
 
-    hasImage: boolean;
-    imageUrl: string;
-    body: string;
-    title: string;
+    readonly hasImage: boolean;
+    readonly imageUrl: string;
+    readonly body: string;
+    readonly title: string;
+    readonly hasScripts: boolean;
 
     constructor(private postData: PostData) {
         this.hasImage = this.postData.imageFileName.length > 0;
-        this.imageUrl = "/images/photos/" + this.postData.date.toString() + "/" + this.postData.imageFileName;
+        this.imageUrl = `/images/photos/${this.postData.date.toString()}/${this.postData.imageFileName}`;
         this.body = postData.body;
         this.title = postData.title;
+        this.hasScripts = postData.hasScripts;
     }
 
     getPostedDate(): string {

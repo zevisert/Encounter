@@ -3,36 +3,55 @@
         <div class="container">
             <div class="card">
                 <div class="row">
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="hidden-xs hidden-sm col-xl-2 col-lg-2 col-md-2">
                         <img class="card-icon img-responsive img-rounded" src="/images/flat-icons/PNG/Beer.png">
                     </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                         <div class="card-title">
                             <span>About me</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                            Hey there. I’m Zev Isert, a student of life, but currently studtying software engineering at the University of Victoria. 
+                            Welcome to my website! I built it from empty files, so aside from the Bootstrap and Angular frameworks that 
+                            are supporting it, every line of HTML, JavaScript, and CSS is my own. This is my first webpage, and I’m still 
+                            working on it, so forgive me if it’s not all perfect.
+                            <br/>
+                            <br/>
+                            As the icon on this page might suggest, I enjoy a good beer, not the kind that comes in a can with a blue 
+                            ribbons or mountains on it. Lucky for me, I’ve no shortage of this living in Victoria. I also have no shortage 
+                            of beautiful places to explore around here. You’ll start to see more and more of my adventures here on my blog 
+                            page, which was the essential reason behind building this website. You can get in touch with me using the buttons 
+                            below, and I’ll get back to you as soon as I can.
+                        </div>
+                        <div class="card-action">
+                            <div class="btn-group btn-group-justified hidden-xs hidden-sm visible-md visible-lg">
+                                <a href="/content/Zev_Isert_Resume.pdf" target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-file-o"></i> Resume
+                                </a>
+                                <a href="https://ca.linkedin.com/in/zevisert" target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-linkedin-square"></i> LinkedIn
+                                </a>
+                                <a href="mailto:web@zevisert.ca" class="btn btn-default btn-lg">
+                                    <i class="fa fa-envelope"></i> Contact
+                                </a>
+                                <a class="btn btn-default btn-lg" (click)="callPhone()" (mouseover)="showPhone()" (mouseleave)="hidePhone()">
+                                    <i class="fa fa-phone"></i> {{ phone }}
+                                </a>
+                            </div>
+                            <div class="btn-group-vertical hidden-lg hidden-md visible-sm visible-xs">
+                                <a href="/content/Zev_Isert_Resume.pdf" target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-file-o"></i> Resume
+                                </a>
+                                <a href="https://ca.linkedin.com/in/zevisert" target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-linkedin-square"></i> LinkedIn
+                                </a>
+                                <a href="mailto:web@zevisert.ca" class="btn btn-default btn-lg">
+                                    <i class="fa fa-envelope"></i> Contact
+                                </a>
+                                <a class="btn btn-default btn-lg" (click)="callPhone()" (mouseover)="showPhone()" (mouseleave)="hidePhone()">
+                                    <i class="fa fa-phone"></i> {{ phone }}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,2 +1,5 @@
-﻿body {
+﻿.instagram-media {
+    margin: 0 auto;
+    display: block;
+    max-width: 500px;
 }

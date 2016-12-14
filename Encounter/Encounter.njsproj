@@ -658,11 +658,6 @@
     <Content Include="public\images\icons\mstile-310x310.png" />
     <Content Include="public\images\icons\mstile-70x70.png" />
     <Content Include="public\images\icons\safari-pinned-tab.svg" />
-    <Content Include="public\images\photos\1446843355942\title.jpg" />
-    <Content Include="public\images\photos\1456678046224\title.png" />
-    <Content Include="public\images\photos\1459032003961\title.png" />
-    <Content Include="public\images\photos\1459552650862\title.png" />
-    <Content Include="public\images\photos\1462514754776\title.png" />
     <Content Include="public\pages\about.component.html" />
     <Content Include="public\pages\app.component.html" />
     <Content Include="public\pages\blog.component.html" />
@@ -695,6 +690,7 @@
     <Content Include="public\styles\dashboard.component.css" />
     <Content Include="public\styles\post.component.css" />
     <Content Include="README.md" />
+    <TypeScriptCompile Include="site\trust.pipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\favicons\" />
@@ -751,12 +747,6 @@
     <Folder Include="public\images\flat-icons\Product\SVG\transportation\" />
     <Folder Include="public\images\flat-icons\Product\SVG\web\" />
     <Folder Include="public\images\icons\" />
-    <Folder Include="public\images\photos\" />
-    <Folder Include="public\images\photos\1446843355942\" />
-    <Folder Include="public\images\photos\1456678046224\" />
-    <Folder Include="public\images\photos\1459032003961\" />
-    <Folder Include="public\images\photos\1459552650862\" />
-    <Folder Include="public\images\photos\1462514754776\" />
     <Folder Include="private\" />
     <Folder Include="public\assets\" />
     <Folder Include="public\pages\" />

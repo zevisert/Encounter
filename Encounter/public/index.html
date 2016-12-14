@@ -20,12 +20,17 @@
             crossorigin="anonymous">
     </script>
     
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/ad41f03ebd.js"></script>
+    
     <!-- PatternLock.js -->
     <link href="/assets/patternLock.css" rel="stylesheet" type="text/css" />
     <script src="/assets/patternLock.js"></script>
     
     <!-- Particles.js -->
     <script src="/node_modules/particles.js/particles.js"></script>
+    <!-- Async Gist -->
+    <script src="/node_modules/async-gist/gist.min.js"></script>
 
     <!-- 1. Load libraries -->
     <!-- Polyfill(s) for older browsers -->
@@ -43,7 +48,8 @@
                     module.main({
                         injections: {
                             particles: particlesJS,
-                            patternlock: PatternLock
+                            patternlock: PatternLock,
+                            jQuery: $
                         }
                     }
                 )}, 1000);
@@ -56,13 +62,21 @@
 <body>
     <zevisert>
         <div class="row">
-            <div class="container" style="padding-top: 400px">
-                <div class="progress progress-striped active">
-                    <div class="progress-bar" style="width: 0%;"></div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="container" style="padding-top: 400px">
+                    <img src="images/icons/icon-dark.svg"
+                         style="width: 180px; height: 180px; margin: 0 auto 3em; display: block;"/>
+                    <div class="progress progress-striped active">
+                        <style>
+                            .progress-bar:last-child:before {
+                                background-color: #f5f5f5;
+                            }
+                        </style>
+                        <div class="progress-bar" style="width: 0%; background-color: #2b3a42"></div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <script>
             var i = 0;
             var p = setInterval(() => {

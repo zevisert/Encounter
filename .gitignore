@@ -13,3 +13,8 @@
 /Encounter/process.env
 /Encounter/accesses.txt
 /Encounter/public/content
+/Encounter/server.js
+/Encounter/site
+/Encounter/routes/*.js
+
+**.map

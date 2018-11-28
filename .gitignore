@@ -4,7 +4,9 @@
 
 /Encounter/.vs
 /Encounter/app
+/Encounter/dist
 /Encounter/bin
+/Encounter/obj
 /Encounter/node_modules
 /Encounter/obj/Debug
 /Encounter/typings
